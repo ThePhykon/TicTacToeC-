@@ -25,6 +25,11 @@ class User : public Player {
             string temp;
             std::cout << "Your choice: "; 
             cin >> temp;
+
+            if(temp == "PAUSE"){
+                return {-1, -1};
+            }
+
             int input = stoi(temp);
 
             return {(input / 3), (input % 3)};

@@ -11,7 +11,7 @@ struct Game {
 };
 
 // Function prototypes
-void main_menu();
+void init();
 
 // Constants
 constexpr int NUM_OF_ROWS = 3;
