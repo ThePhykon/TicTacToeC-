@@ -1,8 +1,9 @@
-#include "game.hpp"
 #include <cstdlib>
 #include <random>
 #include <csignal>
 #include <vector>
+#include "game.hpp"
+#include "bot.hpp"
 
 void clearScreen() {
 #ifdef _WIN32
@@ -179,10 +180,9 @@ void main_menu(){
 
             int starting = dist(gen);
 
-            std::cout << "No bot implemented yet!" << std::endl;
-            std::cin.ignore();
-            std::cin.get();
-            continue;
+            Player* bot = new RandomBot(1);
+            Game game = {Board(), starting, user, bot};
+            game_loop(game);
         }
 
         else if(choice == "3"){
